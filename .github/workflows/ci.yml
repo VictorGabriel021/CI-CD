@@ -1,0 +1,13 @@
+name: Integração Contínua
+
+on: [push, pull_request]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Instala dependências
+        run: npm install
+      - name: Executa testes
+        run: npm test
